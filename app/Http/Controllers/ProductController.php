@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('equipments/create');
+        return view('products.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('sucess', 'Produto adicionado com sucesso!');
     }
 
-    public function edit(string $id)
+    public function edit(Product $product)
     {
         return view('products.edit', compact('product'));
     }
