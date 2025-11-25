@@ -35,7 +35,7 @@
                 <td class="p-3">{{ $supplier->id }}</td>
                 <td class="p-3">{{ $supplier->name }}</td>
                 <td class="p-3">{{ $supplier->cnpj }}</td>
-                <td class="p-3">R$ {{$supplier->products}}</td>
+                <td class="p-3">{{$supplier->products}}</td>
                 <td class="p-3 space-x-2">
                     <a href="{{ route('suppliers.edit', $supplier->id) }}" class="text-blue-600 hover:underline">Editar</a>
 
