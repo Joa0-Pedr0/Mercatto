@@ -9,15 +9,6 @@
 
 <h1 class="text-3xl font-bold mb-6">Cadastrar Fornecedor</h1>
 
-@if ($errors->any())
-    <div class="bg-red-500 text-white p-3 rounded mb-4">
-        <ul class="list-disc ml-6">
-            @foreach ($errors->all() as $e)
-                <li>{{ $e }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 <form action="{{ route('suppliers.store') }}" method="POST"
       class="bg-white p-6 shadow rounded w-96 space-y-3">
@@ -26,16 +17,25 @@
     <label class="block">
         Nome do fornecedor:
         <input type="text" name="name" class="w-full border p-2 rounded">
+            @error('name')
+                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+            @enderror
     </label>
 
     <label class="block">
         CNPJ:
         <input type="number" name="cnpj" class="w-full border p-2 rounded">
+            @error('cnpj')
+                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+            @enderror
     </label>
 
     <label class="block">
         Produtos oferecidos:
         <input type="text" name="products" class="w-full border p-2 rounded">
+            @error('products')
+                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+            @enderror
     </label>
 
     <div class="flex items-center gap-3">
