@@ -7,7 +7,6 @@ use App\Models\Product;
 use App\Models\Customer;
 use App\Http\Requests\StoreSaleRequest; 
 use App\Http\Requests\UpdateSaleRequest;
-use Illuminate\Http\Request;
 
 class SaleController extends Controller
 {
