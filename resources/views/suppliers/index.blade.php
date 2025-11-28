@@ -17,7 +17,9 @@
 
     <div class="mb-4 flex gap-3">
         <a href="{{ route('suppliers.create') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Novo Fornecedor</a>
+        <a href="{{ route('categories.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Categorias</a>
         <a href="{{ route('products.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Produtos</a>
+
     </div>
 
     <table class="w-full bg-white shadow rounded overflow-hidden">
