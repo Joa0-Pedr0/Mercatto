@@ -7,7 +7,7 @@
 </head>
 <body class="bg-gray-100 p-6">
 
-    <h1 class="text-3xl font-bold mb-6">Estoque</h1>
+    <h1 class="text-3xl font-bold mb-6">Produtos</h1>
 
     @if(session('success'))
         <div class="mb-4 p-3 bg-green-500 text-white rounded">
@@ -27,6 +27,7 @@
             <tr>
                 <th class="p-3">ID</th>
                 <th class="p-3">Nome</th>
+                <th class="p-3">Categoria</th>
                 <th class="p-3">Qtd</th>
                 <th class="p-3">Preço</th>
                 <th class="p-3">Ações</th>
@@ -37,6 +38,7 @@
             <tr class="border-t">
                 <td class="p-3">{{ $p->id }}</td>
                 <td class="p-3">{{ $p->name }}</td>
+                <td class="p-3">{{ $p->category->name}}</td>
                 <td class="p-3">{{ $p->amount }}</td>
                 <td class="p-3">R$ {{$p->price}}</td>
                 <td class="p-3 space-x-2">
