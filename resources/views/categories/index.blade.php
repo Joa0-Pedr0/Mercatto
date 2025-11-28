@@ -20,6 +20,7 @@
         <a href="{{ route('customers.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Clientes</a>
         <a href="{{ route('products.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Produtos</a>
         <a href="{{ route('suppliers.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Fornecedores</a>
+        <a href="{{ route('sales.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Vendas</a>
     </div>
 
     <table class="w-full bg-white shadow rounded overflow-hidden">
