@@ -27,6 +27,18 @@
         Nome:
         <input type="text" name="name" class="w-full border p-2 rounded" value="{{$product->name}}">
     </label>
+ <label class="block">
+    Categoria:
+    <select name="category_id" class="w-full border p-2 rounded">
+        <option value="">-- Selecione a Categoria --</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}"
+                {{ $category->id == $product->category_id ? 'selected' : '' }}> 
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select>
+</label>
 
     <label class="block">
         Quantidade:
