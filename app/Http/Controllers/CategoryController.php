@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Http\Requests\StoreCategoryRequest; 
+use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -21,9 +23,9 @@ class CategoryController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        Category::create($request->all());
+        Category::create($request->validated());
 
         return redirect()->route('categories.index')->with('success', 'Categoria adicionada com sucesso!');
     }
@@ -35,9 +37,9 @@ class CategoryController extends Controller
     }
 
 
-    public function update(Request $request, Category $category)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category->update($request->all());
+        $category->update($request->validated());
 
         return redirect()->route('categories.index')->with('success', 'Categoria atualizada com sucesso!');
     }
