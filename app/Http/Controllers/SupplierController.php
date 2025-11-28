@@ -43,7 +43,7 @@ class SupplierController extends Controller
     public function update(Request $request, Supplier $supplier)
     {
         $supplier->update($request->all());
-        return redirect()->route('suppliers.index')->with('success', 'Fornecedor atualizada com sucesso!');
+        return redirect()->route('suppliers.index')->with('success', 'Fornecedor atualizado com sucesso!');
     }
 
     public function destroy(Supplier $supplier)
