@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Http\Requests\StoreCustomerRequest; 
+use App\Http\Requests\UpdateCustomerRequest;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -19,9 +21,9 @@ class CustomerController extends Controller
         return view('customers.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreCustomerRequest $request)
     {
-        Customer::create($request->all());
+        Customer::create($request->validated());
 
         return redirect()->route('customers.index')->with('success', 'Cliente cadastrado com sucesso!');
     }
@@ -31,9 +33,9 @@ class CustomerController extends Controller
         return view('customers.edit', compact('customer'));
     }
 
-    public function update(Request $request, Customer $customer)
+    public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        $customer->update($request->all());
+        $customer->update($request->validated());
 
         return redirect()->route('customers.index')->with('success', 'Cliente atualizado com sucesso!');
     }
