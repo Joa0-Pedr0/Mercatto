@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Produtos</title>
+    <title>Categorias</title>
 </head>
 <body class="bg-gray-100 p-6">
 
@@ -27,6 +27,7 @@
                 <th class="p-3">ID</th>
                 <th class="p-3">Nome</th>
                 <th class="p-3">Descrição</th>
+                <th class="p-3">Ações</th>
             </tr>
         </thead>
         <tbody>
