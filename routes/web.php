@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SaleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,5 +25,6 @@ Route::resource('products', ProductController::class);
 Route::resource('suppliers', SupplierController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('customers', CustomerController::class);
+Route::resource('sales', SaleController::class);
 
 require __DIR__.'/auth.php';
