@@ -25,7 +25,7 @@ class CategoryController extends Controller
     {
         Category::create($request->all());
 
-        return redirect()->route('categories.index')->with('sucess', 'Categoria adicionado com sucesso!');
+        return redirect()->route('categories.index')->with('success', 'Categoria adicionado com sucesso!');
     }
 
 
@@ -39,13 +39,13 @@ class CategoryController extends Controller
     {
         $category->update($request->all());
 
-        return redirect()->route('categories.index')->with('sucess', 'Categoria atualizada com sucesso!');
+        return redirect()->route('categories.index')->with('success', 'Categoria atualizada com sucesso!');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
 
-        return redirect()->route('categories.index')->with('sucess', 'Categoria excluído com sucesso!');
+        return redirect()->route('categories.index')->with('success', 'Categoria excluído com sucesso!');
     }
 }
