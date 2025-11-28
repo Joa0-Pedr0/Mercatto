@@ -30,7 +30,7 @@
 
     <label class="block">
         Exemplos de produtos:
-        <input type="number" name="description" class="w-full border p-2 rounded" value="{{$category->amount}}">
+        <input type="text" name="description" class="w-full border p-2 rounded" value="{{$category->description}}">
     </label>
 
     <div class="flex items-center gap-3">
