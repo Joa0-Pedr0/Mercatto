@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Http\Requests\StoreProductRequest; 
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -29,9 +31,9 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
-        Product::create($request->all());
+        Product::create($request->validated());
 
         return redirect()->route('products.index')->with('success', 'Produto adicionado com sucesso!');
     }
@@ -45,9 +47,9 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        $product->update($request->all());
+        $product->update($request->validated());
         return redirect()->route('products.index')->with('success', 'Produto atualizado com sucesso!');
     }
 
