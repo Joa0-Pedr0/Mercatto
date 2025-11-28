@@ -30,7 +30,7 @@
 
     <label class="block">
         Exemplos de produtos:
-        <input type="number" name="description" class="w-full border p-2 rounded">
+        <input type="text" name="description" class="w-full border p-2 rounded">
     </label>
 
     <div class="flex items-center gap-3">
