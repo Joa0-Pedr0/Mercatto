@@ -9,15 +9,6 @@
 
 <h1 class="text-3xl font-bold mb-6">Editar Cliente</h1>
 
-@if ($errors->any())
-    <div class="bg-red-500 text-white p-3 rounded mb-4">
-        <ul class="list-disc ml-6">
-            @foreach ($errors->all() as $e)
-                <li>{{ $e }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 <form action="{{ route('customers.update', $customer->id) }}" method="POST"
       class="bg-white p-6 shadow rounded w-96 space-y-3">
@@ -26,16 +17,25 @@
     <label class="block">
         Nome do cliente:
         <input type="text" name="name" class="w-full border p-2 rounded" value="{{$customer->name}}">
+            @error('name')
+                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+            @enderror
     </label>
 
     <label class="block">
         CPF:
         <input type="text" name="cpf" class="w-full border p-2 rounded" value="{{$customer->cpf}}">
+            @error('cpf')
+                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+            @enderror
     </label>
 
     <label class="block">
         Endereço:
         <input type="text" name="address" class="w-full border p-2 rounded" value="{{$customer->address}}">
+            @error('address')
+                <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+            @enderror
     </label>
 
     <div class="flex items-center gap-3">
