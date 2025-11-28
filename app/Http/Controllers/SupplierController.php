@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreSupplierRequest; 
+use App\Http\Requests\UpdateSupplierRequest;
 use App\Models\Supplier;
 
 class SupplierController extends Controller
@@ -27,9 +29,9 @@ class SupplierController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSupplierRequest $request)
     {
-        Supplier::create($request->all());
+        Supplier::create($request->validated());
 
         return redirect()->route('suppliers.index')->with('success', 'Fornecedor adicionado com sucesso!');
     }
@@ -40,9 +42,9 @@ class SupplierController extends Controller
         return view('suppliers.edit', compact('supplier'));
     }
 
-    public function update(Request $request, Supplier $supplier)
+    public function update(UpdateSupplierRequest $request, Supplier $supplier)
     {
-        $supplier->update($request->all());
+        $supplier->update($request->validated());
         return redirect()->route('suppliers.index')->with('success', 'Fornecedor atualizado com sucesso!');
     }
 
