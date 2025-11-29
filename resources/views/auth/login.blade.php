@@ -79,15 +79,6 @@
                         Criar uma conta
                     </a>
                 @endif
-
-                @if (Route::has('password.request'))
-                    <a
-                        href="{{ route('password.request') }}"
-                        class="w-full text-center text-sm text-gray-500 hover:underline"
-                    >
-                        Esqueci minha senha
-                    </a>
-                @endif
             </div>
         </form>
     </div>
