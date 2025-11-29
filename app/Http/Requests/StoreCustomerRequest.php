@@ -27,4 +27,19 @@ class StoreCustomerRequest extends FormRequest
             'address' => ['required','string', 'max:500'],
         ];
     }
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'O nome do cliente é obrigatório.',
+            'name.max' => 'O nome do cliente não pode exceder 255 caracteres.',
+
+            'cpf.required' => 'O CPF do cliente é obrigatório.',
+            'cpf.unique' => 'O CPF do cliente já está em uso.',
+            'cpf.max' => 'O CPF do cliente não pode exceder 14 caracteres.',
+
+            'address.required' => 'O endereço do cliente é obrigatório.',
+            'address.max' => 'O endereço do cliente não pode exceder 500 caracteres.',
+
+        ];
+    }
 }
