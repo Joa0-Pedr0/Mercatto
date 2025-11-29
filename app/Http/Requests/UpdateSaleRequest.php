@@ -29,4 +29,19 @@ class UpdateSaleRequest extends FormRequest
             'payment' => ['required', 'in:pix,money,card,ticket'],
         ];
     }
+    
+    public function messages(): array
+    {
+        return [
+            'customer_id.required' => 'O cliente é obrigatório.',
+            'customer_id.exists' => 'O cliente selecionado é inválido.',
+
+            'product_id.required' => 'O produto é obrigatório.',
+            'product_id.exists' => 'O produto selecionado é inválido.',
+
+            'payment.required' => 'O método de pagamento é obrigatório.',
+            'payment.in' => 'O método de pagamento selecionado é inválido.',
+
+        ];
+    }
 }
