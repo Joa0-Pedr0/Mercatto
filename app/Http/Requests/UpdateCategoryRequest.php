@@ -26,4 +26,14 @@ class UpdateCategoryRequest extends FormRequest
             'description' => ['required', 'string'],
         ];
     }
+        public function messages(): array
+    {
+        return [
+            'name.required' => 'O nome da categoria é obrigatório.',
+            'name.max' => 'O nome da categoria não pode exceder 255 caracteres.',
+            'name.unique' => 'O nome da categoria já está em uso.',
+
+            'description.required' => 'A descrição da categoria é obrigatória.',
+        ];
+    }
 }
