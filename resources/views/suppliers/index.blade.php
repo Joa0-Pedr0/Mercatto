@@ -21,6 +21,13 @@
         <a href="{{ route('customers.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Clientes</a>
         <a href="{{ route('products.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Produtos</a>
         <a href="{{ route('sales.index') }}" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Vendas</a>
+        <form method="POST" action="{{ route('logout') }}" class="inline">
+    @csrf
+    <button type="submit" 
+        class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition duration-150 ease-in-out">
+        Deslogar
+    </button>
+        </form>
 
     </div>
 
