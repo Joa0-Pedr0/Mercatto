@@ -9,15 +9,7 @@
 
 <h1 class="text-3xl font-bold mb-6">Editar Venda</h1>
 
-@if ($errors->any())
-    <div class="bg-red-500 text-white p-3 rounded mb-4">
-        <ul class="list-disc ml-6">
-            @foreach ($errors->all() as $e)
-                <li>{{ $e }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
 
 <form action="{{ route('sales.update', $sale->id) }}" method="POST"
       class="bg-white p-6 shadow rounded w-96 space-y-3">
@@ -34,6 +26,9 @@
             </option>
         @endforeach
     </select>
+        @error('customer_id')
+        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+        @enderror
 </label>
 
 <label class="block">
@@ -47,11 +42,14 @@
             </option>
         @endforeach
     </select>
+    @error('product_id')
+        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+    @enderror
 </label>
 
 <label class="block">
     Forma de Pagamento:
-    <select name="payment" class="w-full border p-2 rounded" required>
+    <select name="payment" class="w-full border p-2 rounded">
         <option value="">-- Selecione a Forma de Pagamento --</option>
 
         <option value="pix" {{ $sale->payment == 'pix' ? 'selected' : '' }}>Pix</option>
@@ -63,6 +61,9 @@
         <option value="ticket" {{ $sale->payment == 'boleto' ? 'selected' : '' }}>Boleto</option>
         
     </select>
+    @error('payment')
+        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+    @enderror
 </label>
 
     <div class="flex items-center gap-3">
